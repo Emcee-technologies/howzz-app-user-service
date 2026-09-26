@@ -1,4 +1,19 @@
 spring:
-    application:
-        name: howzz-app-user-service
+  application:
+    name: howzz-app-user-service
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/howzapp_user_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      notification-q: howzz-app-notification-q
+
+server:
+  port: 8080
+  servlet:
+    context-path: /user-service
